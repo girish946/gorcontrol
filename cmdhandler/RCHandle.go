@@ -1,4 +1,4 @@
-package gorcontrol
+package cmdhandler
 
 import (
 	"fmt"
