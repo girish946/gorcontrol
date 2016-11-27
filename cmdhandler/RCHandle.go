@@ -64,6 +64,11 @@ func AltF4() {
 	robotgo.KeyToggle("alt", "up")
 }
 
+func HoldWindows(){
+    robotgo.KeyToggle("alt", "down")
+    robotgo.KeyTap("tab")
+}
+
 func wait(ms uint) {
 
 	<-time.After(time.Millisecond * time.Duration(ms))
