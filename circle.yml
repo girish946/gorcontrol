@@ -1,0 +1,13 @@
+## Customize dependencies
+dependencies:
+  pre:
+    - sudo apt-get update
+    - sudo apt-get install 
+    - sudo apt-get install libx11-dev
+    - sudo apt-get install libgtkglextmm-x11-dev
+    - sudo apt-get install libghc6-x11-dev
+    - sudo apt-get install libgl1-mesa-swx11-dev
+    - sudo apt-get install xorg-dev
+    - sudo apt-get install libxtst-dev libpng++-dev  
+
+
