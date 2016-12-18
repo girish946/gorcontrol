@@ -12,6 +12,9 @@ func main() {
 
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", homeHandler)
+	router.HandleFunc("/templates/static/css/{path}", cssHandler)
+	router.HandleFunc("/templates/static/js/{path}", jsHandler)
+	router.HandleFunc("/templates/static/fonts/{path}", fontsHandler)
 	router.HandleFunc("/templates/{path}", pathHandler)
 	router.HandleFunc("/handle/{command}", handleCommand)
 	fmt.Printf("server starting at http://127.0.0.1:8080\n")
@@ -28,7 +31,37 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 func pathHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	file_path := vars["path"]
+	//log.Info(file_path)
+	log.Info("request from ", r.RemoteAddr, " ", r.URL)
 	data, _ := rc.Read("templates/" + file_path)
+	fmt.Fprintf(w, data)
+
+}
+
+func jsHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	file_path := vars["path"]
+	//log.Info(file_path)
+	log.Info("request from ", r.RemoteAddr, " ", r.URL)
+	data, _ := rc.Read("templates/static/js/" + file_path)
+	fmt.Fprintf(w, data)
+
+}
+func cssHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	file_path := vars["path"]
+	//log.Info(file_path)
+	log.Info("request from ", r.RemoteAddr, " ", r.URL)
+	data, _ := rc.Read("templates/static/css/" + file_path)
+	fmt.Fprintf(w, data)
+
+}
+func fontsHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	file_path := vars["path"]
+	//log.Info(file_path)
+	log.Info("request from ", r.RemoteAddr, " ", r.URL)
+	data, _ := rc.Read("templates/static/fonts/" + file_path)
 	fmt.Fprintf(w, data)
 
 }
