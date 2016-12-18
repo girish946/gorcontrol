@@ -1,22 +1,102 @@
 <html>
-<head>
-<link href="templates/static/css/bootstrap.min.css" rel="stylesheet">
-<script src="templates/static/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="templates/static/js/bootstrap.min.js" type="text/javascript"></script>
-</head>
-<body>
-<div class="container" >
-   <h1> this is the sg remote server</h1>
-   <a href="/handle/show_desktop">show_desktop</a> </br>
-   <a href="/handle/show_dashboard">show_dashboard</a></br>
-   <a href="/handle/alt_tab">alt_tab</a></br>
-   <a href="/handle/up">Up</a></br>
-   <a href="/handle/down">down</a></br>
-   <a href="/handle/left">left</a></br>
-   <a href="/handle/right">right</a></br>
-   <a href="/handle/show_filemanager">showFileManager</a></br>
-   <a href="/handle/close_Window">close the window</a></br>
-   <a href="/handle/holdWindows">holdWindows</a></br>
-</div>
-</body>
+	<head>
+		<link href="templates/static/css/bootstrap.min.css" rel="stylesheet">
+		<script src="templates/static/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+		<script src="templates/static/js/bootstrap.min.js" type="text/javascript"></script>
+
+		  <div class="container-fluid">
+		     <ul class="nav nav-tabs">
+			<li role="presentation" class="active"><a href="#">Home</a></li>
+			<li role="presentation"><a href="#">Profile</a></li>
+			<li role="presentation"><a href="#">Messages</a></li>
+		     </ul>
+		  </div>
+
+	</head>
+
+	<body>
+		<div class="container-fluid" >
+		   <h1> this is the sg remote server</h1>
+
+		   <div class="row container-fluid">
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/show_desktop" role="button">Show Desktop
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/show_dashboard" role="button">show_dashboard
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6  col-md-8">
+			   <a class="btn btn-default" href="/handle/alt_tab" role="button">
+			       alt_tab
+			   </a>
+		       </div>
+		   </div>
+
+		   <div class="row container-fluid">
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/up" role="button">Up
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/down" role="button">Down
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6  col-md-8">
+			   <a class="btn btn-default" href="/handle/left" role="button">
+			       Left
+			   </a>
+		       </div>
+		   </div>
+
+
+
+		   <div class="row container-fluid">
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/right" role="button">Right
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/down" role="button">Down
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6  col-md-8">
+			   <a class="btn btn-default" href="/handle/show_filemanager" role="button">
+			       File manager
+			   </a>
+		       </div>
+		   </div>
+
+
+
+		   <div class="row container-fluid">
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/close_Window" role="button">Close Window
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6 col-md-8">
+			   <a class="btn btn-default" href="/handle/holdWindows" role="button">Hold Windows
+			   </a>
+		       </div>
+
+		       <div class="col-xs-12 col-sm-6  col-md-8">
+			   <a class="btn btn-default" href="/handle/show_filemanager" role="button">
+			       File manager
+			   </a>
+		       </div>
+		   </div>
+		</div>
+	</body>
 </html>

@@ -85,7 +85,8 @@ func handleCommand(w http.ResponseWriter, r *http.Request) {
 	execute, ok := commands[vars["command"]]
 	if ok {
 		execute()
-		fmt.Fprintf(w, "ok")
+		//fmt.Fprintf(w, "ok")
+		http.Redirect(w, r, "/", 200)
 	} else {
 		log.Error("command not found")
 		fmt.Fprintf(w, "command not found")
