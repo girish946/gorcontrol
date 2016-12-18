@@ -2,7 +2,7 @@ package cmdhandler
 
 import (
 	"fmt"
-	"github.com/go-vgo/robotgo"
+	"github.com/girish946/robotgo"
 	"os/exec"
 	"time"
 )
