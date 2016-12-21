@@ -64,12 +64,54 @@ func AltF4() {
 	robotgo.KeyToggle("alt", "up")
 }
 
-func HoldWindows(){
-    robotgo.KeyToggle("alt", "down")
-    robotgo.KeyTap("tab")
+func HoldWindows() {
+	robotgo.KeyToggle("alt", "down")
+	robotgo.KeyTap("tab")
+}
+
+func Enter() {
+	robotgo.KeyTap("enter")
+}
+
+func Escape() {
+	robotgo.KeyTap("escape")
+}
+
+func Home() {
+	robotgo.KeyTap("home")
+}
+
+func End() {
+	robotgo.KeyTap("end")
+}
+
+func Backspace() {
+	robotgo.KeyTap("backspace")
+}
+
+func Tab() {
+	robotgo.KeyTap("tab")
+}
+
+func F5() {
+	robotgo.KeyTap("f5")
+}
+
+func PageUp() {
+	robotgo.KeyTap("pageup")
+}
+
+func PageDown() {
+	robotgo.KeyTap("pagedown")
+}
+
+func Power() {
+	_, err := exec.Command("gnome-session-quit --power-off", "/media/").Output()
+	if err != nil {
+		fmt.Printf("%s", err)
+	}
 }
 
 func wait(ms uint) {
-
 	<-time.After(time.Millisecond * time.Duration(ms))
 }
