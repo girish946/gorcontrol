@@ -106,7 +106,7 @@ func PageDown() {
 }
 
 func Power() {
-	_, err := exec.Command("gnome-session-quit --power-off", "/media/").Output()
+	_, err := exec.Command("gnome-session-quit", "--power-off").Output()
 	if err != nil {
 		fmt.Printf("%s", err)
 	}

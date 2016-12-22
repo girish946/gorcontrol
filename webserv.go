@@ -51,7 +51,7 @@ func main() {
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	log.Info("request from ", r.RemoteAddr, " ", r.URL)
-	data, _ := rc.Read("static/index.html")
+	data, _ := rc.Read("templates/index.html")
 	fmt.Fprintf(w, data)
 }
 
