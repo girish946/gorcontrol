@@ -43,6 +43,9 @@ func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir+"/static/"))))
 	router.HandleFunc("/", homeHandler)
+	router.HandleFunc("/dev", devHomeHandler)
+	router.HandleFunc("/login", loginHandler)
+	router.HandleFunc("/dologin", doLoginHandler)
 	router.HandleFunc("/handle/{command}", handleCommand)
 	http.Handle("/", router)
 	fmt.Printf("server starting at http://0.0.0.0:8100\n")
@@ -52,6 +55,25 @@ func main() {
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	log.Info("request from ", r.RemoteAddr, " ", r.URL)
 	data, _ := rc.Read("templates/index.html")
+	fmt.Fprintf(w, data)
+}
+
+func devHomeHandler(w http.ResponseWriter, r *http.Request) {
+	/*log.Info("request from ", r.RemoteAddr, " ", r.URL)
+	data, _ := rc.Read("static/.html")
+	fmt.Fprintf(w, data)*/
+	http.Redirect(w, r, "/static/", 302)
+}
+
+func doLoginHandler(w http.ResponseWriter, r *http.Request) {
+	log.Info("request from ", r.RemoteAddr, " ", r.URL)
+	data, _ := rc.Read("templates/Login.html")
+	fmt.Fprintf(w, data)
+}
+
+func loginHandler(w http.ResponseWriter, r *http.Request) {
+	log.Info("request from ", r.RemoteAddr, " ", r.URL)
+	data, _ := rc.Read("templates/Login.html")
 	fmt.Fprintf(w, data)
 }
 

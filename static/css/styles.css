@@ -1,1 +1,15 @@
-.modal-footer {   border-top: 0px; }
+body{
+	margin: 10px auto;
+}
+.container{
+	width:360px;
+	margin: 10px auto;
+}
+.row{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.row .col-sm-4{
+	width: 33%;
+	float: left;
+}
